@@ -64,6 +64,7 @@ body { font-family:"Noto Sans JP",sans-serif; line-height:1.7; color:#333; backg
 .cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:40px; }
 .card{ background:#fff; padding:20px; text-align:center; border-radius:15px; box-shadow:0 2px 10px rgba(0,0,0,0.08); opacity:0; transform:translateY(40px) scale(0.8) rotate(-10deg); transition:all 0.8s ease; }
 .card img{ width:100%; border-radius:12px; }
+.card .price {font-size: 1.2rem; font-weight: bold; color: #e27d7d; /* ボタンと統一 */ margin: 10px 0 5px;}
 
 /* ====== レビュー ====== */
 .review-item{ background:#fff; padding:25px; margin-bottom:30px; border-radius:15px; box-shadow:0 2px 10px rgba(0,0,0,0.08); opacity:0; transform:translateY(40px) scale(0.8) rotate(-10deg); transition:all 0.8s ease; }
