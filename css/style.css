@@ -99,3 +99,12 @@ body { font-family:"Noto Sans JP",sans-serif; line-height:1.7; color:#333; backg
 .add-cart:hover {
   opacity: 0.8;
 }
+
+/* ===========================
+   次へ
+=========================== */
+.next .btn {
+  padding: 5px;
+  margin-left: 80%;
+  margin-top: 5px;
+}
