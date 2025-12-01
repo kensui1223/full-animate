@@ -1,0 +1,101 @@
+/* ====== リセット ====== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Noto Sans JP",sans-serif; line-height:1.7; color:#333; background:#fafafa; overflow-x:hidden; }
+
+/* ====== ローディング ====== */
+#loader { position:fixed; inset:0; background:#fff; display:flex; justify-content:center; align-items:center; z-index:2000; }
+.loader-animation span { font-size:4rem; animation:rotateBounce 1.5s infinite; }
+@keyframes rotateBounce {
+  0% { transform:rotate(0deg) translateY(0); }
+  25% { transform:rotate(90deg) translateY(-25px); }
+  50% { transform:rotate(180deg) translateY(0); }
+  75% { transform:rotate(270deg) translateY(-15px); }
+  100% { transform:rotate(360deg) translateY(0); }
+}
+
+/* ====== ヘッダー ====== */
+.header { position:fixed; top:0; left:0; width:100%; height:70px; background:rgba(255,255,255,0.95); backdrop-filter:blur(6px); display:flex; justify-content:space-between; align-items:center; padding:0 25px; z-index:1000; border-bottom:1px solid #eee; }
+.logo{ font-size:1.5rem; font-weight:bold; }
+.nav-links { list-style:none; display:flex; gap:20px; }
+.nav-links a { color:#333; text-decoration:none; font-size:1rem; }
+#hamburger { display:none; cursor:pointer; font-size:1.5rem; }
+.nav-links.active { background:#ffeaea; top:70px; height: calc(100% - 70px); position: fixed; right:0; flex-direction: column; padding:40px 20px; z-index:1001; }
+
+/* ====== HERO ====== */
+.hero { height:100vh; min-height:600px; background-size:cover; background-position:center; background-attachment:fixed; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 20px; position:relative; }
+.hero::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,0.35); }
+.hero-content { position:relative; color:#fff; max-width:800px; }
+.hero h2 { font-size:3.5rem; margin-bottom:15px; }
+.hero p { font-size:1.3rem; margin-bottom:25px; }
+.btn { display:inline-block; background:#e27d7d; padding:12px 24px; color:#fff; text-decoration:none; border-radius:30px; transition:0.2s; }
+.btn:hover{ opacity:0.8; }
+
+/* ====== セクション共通 ====== */
+.section{ padding:80px 20px; }
+.section-title{ font-size:2.4rem; text-align:center; margin-bottom:40px; }
+
+/* ====== FEATURE ====== */
+.feature-block{ display:flex; align-items:center; justify-content:center; gap:30px; margin:40px auto; max-width:900px; padding:20px; opacity:0; transform:translateY(40px); }
+.feature-block img{ width:160px; height:auto; object-fit:contain; flex-shrink:0; }
+.feature-text{ max-width:500px; }
+.feature-text h3{ font-size:1.6rem; margin-bottom:10px; }
+.feature-text p{ font-size:1rem; line-height:1.7; }
+
+/* ====== スマホ ====== */
+@media(max-width:768px){
+  #hamburger{ display:block; }
+  .nav-links{ position:fixed; top:70px; right:-100%; width:70%; height:calc(100%-70px); flex-direction:column; padding:40px 20px; gap:25px; transition:0.3s; }
+  .nav-links.active{ right:0; }
+  .feature-block{ flex-direction:column; text-align:center; }
+  .feature-block img{ width:140px; }
+}
+
+/* ====== ステップ ====== */
+.steps{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:40px; }
+.step{ opacity:0; transform:translateY(40px) scale(0.8) rotate(-10deg); transition:all 0.8s ease; }
+.step img{ width:100%; max-height:300px; border-radius:12px; }
+
+/* ====== 利用シーン ====== */
+.scene-block{ display:flex; align-items:center; gap:40px; margin-bottom:50px; opacity:0; transform:translateY(40px) scale(0.8) rotate(-10deg); transition:all 0.8s ease; }
+.scene-block img{ width:250px; border-radius:12px; }
+@media(max-width:250px){ .scene-block{ flex-direction:column; text-align:center; } .scene-block img{ width:80%; } }
+
+/* ====== 商品カード ====== */
+.cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:40px; }
+.card{ background:#fff; padding:20px; text-align:center; border-radius:15px; box-shadow:0 2px 10px rgba(0,0,0,0.08); opacity:0; transform:translateY(40px) scale(0.8) rotate(-10deg); transition:all 0.8s ease; }
+.card img{ width:100%; border-radius:12px; }
+
+/* ====== レビュー ====== */
+.review-item{ background:#fff; padding:25px; margin-bottom:30px; border-radius:15px; box-shadow:0 2px 10px rgba(0,0,0,0.08); opacity:0; transform:translateY(40px) scale(0.8) rotate(-10deg); transition:all 0.8s ease; }
+
+/* ====== お問い合わせ ====== */
+.contact{ text-align:center; opacity:0; transform:translateY(40px) scale(0.8) rotate(-10deg); transition:all 0.8s ease; }
+.contact .btn{ margin-top:20px; }
+
+/* ====== カート ====== */
+#cart-icon{ position:fixed; bottom:20px; right:20px; width:65px; height:65px; background:#e27d7d; border-radius:50%; display:flex; justify-content:center; align-items:center; cursor:pointer; z-index:1200; font-size:2rem; color:#fff; }
+
+/* ====== フッター ====== */
+.footer{ text-align:center; padding:20px; background:#eee; margin-top:60px; }
+
+/* ====== アニメーション keyframes ====== */
+@keyframes bounceIn{0%{transform:scale(0.3) translateY(-100px) rotate(-30deg);opacity:0;}50%{transform:scale(1.05) translateY(20px) rotate(15deg);opacity:1;}70%{transform:scale(0.95) translateY(-10px) rotate(-5deg);}100%{transform:scale(1) translateY(0) rotate(0deg);opacity:1;}}
+@keyframes rotateIn{0%{transform:rotate(-180deg) scale(0.5);opacity:0;}100%{transform:rotate(0deg) scale(1);opacity:1;}}
+@keyframes zoomIn{0%{transform:scale(0.3);opacity:0;}100%{transform:scale(1);opacity:1;}}
+
+/* ====== カートに入れるボタン ====== */
+.add-cart {
+  display: inline-block;
+  background-color: #e27d7d;  /* 元のピンク系 */
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-cart:hover {
+  opacity: 0.8;
+}
